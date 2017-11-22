@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+#settingHeader {
+    background-color: red;
+    height: 200px;
+}
+
+#loginButton {
+    background-color: yellow;
+
+}
+
+#userIcon {
+    display: block;
+    margin: auto;
+    width: 35%;
+}
+
+#settingList {
+    background-color: green;
+}
