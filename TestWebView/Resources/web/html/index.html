@@ -3,18 +3,19 @@
 <head>
     <meta charset="utf-8">
     <title>🙃 day3 index</title>
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="web/styles/index.css" />
 </head>
 <body>
     <div id="settingHeader">
         <img src="https://www.w3schools.com/css/paris.jpg" alt="" id="userIcon">
-        <a href="login.html" id="loginButton">登录/注册</a>
+        <a onclick="actionLogin()" id="loginButton">登录/注册</a>
         <button onclick="changeImage()">更改图片</button>
     </div>
     <div id="settingList">
         setting list
+        <button onclick="actionSetting()">js调用native注册方法</button>
     </div>
 
-    <script type="text/javascript" src="../scripts/api.js"></script>
+    <script type="text/javascript" src="web/scripts/api.js"></script>
 </body>
 </html>

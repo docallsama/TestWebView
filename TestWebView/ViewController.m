@@ -19,19 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"web/html/index" ofType:@"html"];
     NSString *htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
     [ibWebView loadHTMLString:htmlString baseURL:[[NSBundle mainBundle] bundleURL]];
+    NSLog(@"file path -> %@",htmlFile);
     
 //    WKWebView *webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
 //    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:requestString]]];
 //    webView.navigationDelegate = self;
 //    [self.view addSubview:webView];
     
+//    NSString *jsString = @"document.getElementById(\"userIcon\").src=\"https://www.w3schools.com/css/img_lights.jpg\";";
+//    JSContext *context = [[JSContext alloc] init];
+//    JSValue *value = [context evaluateScript:jsString];
+//    NSLog(@"value => %@",value);
+    
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSLog(@"wk request -> %@",navigationAction.request.URL);
+    
     decisionHandler(WKNavigationActionPolicyAllow);
     
 }
@@ -41,6 +48,7 @@
     NSString *requestString = [[request URL] absoluteString];//获取请求的绝对路径.
     requestString = [requestString stringByRemovingPercentEncoding];
     NSLog(@"uiwebview request -> %@",requestString);
+    
     return YES;
 }
 
