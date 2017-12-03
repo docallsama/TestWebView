@@ -8,9 +8,12 @@
 
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
+#import "JSBridgeModel.h"
 @import JavaScriptCore;
 
-@interface ViewController () <WKNavigationDelegate>
+@interface ViewController () <UIWebViewDelegate>
+
+@property (nonatomic,retain)JSContext *mainContext;
 
 @end
 
@@ -29,18 +32,6 @@
 //    webView.navigationDelegate = self;
 //    [self.view addSubview:webView];
     
-//    NSString *jsString = @"document.getElementById(\"userIcon\").src=\"https://www.w3schools.com/css/img_lights.jpg\";";
-//    JSContext *context = [[JSContext alloc] init];
-//    JSValue *value = [context evaluateScript:jsString];
-//    NSLog(@"value => %@",value);
-    
-}
-
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    NSLog(@"wk request -> %@",navigationAction.request.URL);
-    
-    decisionHandler(WKNavigationActionPolicyAllow);
-    
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -50,6 +41,19 @@
     NSLog(@"uiwebview request -> %@",requestString);
     
     return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    self.mainContext = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    
+    JSBridgeModel *model = [[JSBridgeModel alloc] init];
+    self.mainContext[@"OCModel"] = model;
+    model.jsContext = self.mainContext;
+    model.webView = ibWebView;
+    
+    self.mainContext.exceptionHandler = ^(JSContext *context, JSValue *exception) {
+        NSLog(@"exception -> %@",exception);
+    };
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{

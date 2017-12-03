@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A75104591FD43D3900CA699C /* OVWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A75104581FD43D3900CA699C /* OVWebView.m */; };
+		A751045D1FD4443400CA699C /* JSBridgeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A751045C1FD4443400CA699C /* JSBridgeModel.m */; };
 		CE9D3CEE1D94F9C700E87AD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D3CED1D94F9C700E87AD1 /* main.m */; };
 		CE9D3CF11D94F9C700E87AD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D3CF01D94F9C700E87AD1 /* AppDelegate.m */; };
 		CE9D3CF41D94F9C700E87AD1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D3CF31D94F9C700E87AD1 /* ViewController.m */; };
@@ -36,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A75104571FD43D3900CA699C /* OVWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVWebView.h; sourceTree = "<group>"; };
+		A75104581FD43D3900CA699C /* OVWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVWebView.m; sourceTree = "<group>"; };
+		A751045B1FD4443400CA699C /* JSBridgeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridgeModel.h; sourceTree = "<group>"; };
+		A751045C1FD4443400CA699C /* JSBridgeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridgeModel.m; sourceTree = "<group>"; };
 		CE9D3CE91D94F9C700E87AD1 /* TestWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9D3CED1D94F9C700E87AD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE9D3CEF1D94F9C700E87AD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +86,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A75104561FD43D1500CA699C /* OVWebView */ = {
+			isa = PBXGroup;
+			children = (
+				A75104571FD43D3900CA699C /* OVWebView.h */,
+				A75104581FD43D3900CA699C /* OVWebView.m */,
+				A751045A1FD4442200CA699C /* JSBridgeModel */,
+			);
+			path = OVWebView;
+			sourceTree = "<group>";
+		};
+		A751045A1FD4442200CA699C /* JSBridgeModel */ = {
+			isa = PBXGroup;
+			children = (
+				A751045B1FD4443400CA699C /* JSBridgeModel.h */,
+				A751045C1FD4443400CA699C /* JSBridgeModel.m */,
+			);
+			path = JSBridgeModel;
+			sourceTree = "<group>";
+		};
 		CE9D3CE01D94F9C700E87AD1 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +132,7 @@
 				CE9D3CF01D94F9C700E87AD1 /* AppDelegate.m */,
 				CE9D3CF21D94F9C700E87AD1 /* ViewController.h */,
 				CE9D3CF31D94F9C700E87AD1 /* ViewController.m */,
+				A75104561FD43D1500CA699C /* OVWebView */,
 				CEE25D7E1FC576F8003E8F64 /* Resources */,
 				CE9D3CF51D94F9C700E87AD1 /* Main.storyboard */,
 				CE9D3CF81D94F9C700E87AD1 /* Assets.xcassets */,
@@ -286,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75104591FD43D3900CA699C /* OVWebView.m in Sources */,
 				CE9D3CF41D94F9C700E87AD1 /* ViewController.m in Sources */,
+				A751045D1FD4443400CA699C /* JSBridgeModel.m in Sources */,
 				CE9D3CF11D94F9C700E87AD1 /* AppDelegate.m in Sources */,
 				CE9D3CEE1D94F9C700E87AD1 /* main.m in Sources */,
 			);

@@ -21,7 +21,7 @@ function invoke(type,action,params) {
         try {
             var iframe;
             iframe = document.createElement('iframe');
-            iframe.setAttribute('src', action + '://uzai?' + param);
+            iframe.setAttribute('src', action + '://uzai?' + params);
             iframe.setAttribute('style', 'display:none;');
             iframe.setAttribute('height', '0px');
             iframe.setAttribute('width', '0px');
